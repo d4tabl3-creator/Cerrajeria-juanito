@@ -367,7 +367,7 @@ footer p{color:var(--muted);font-size:.78rem;}
         <div class="ci"><div class="ci-icon">📞</div><div><h4 class="es">Teléfono</h4><h4 class="en">Phone</h4><a href="tel:3228894250">322 889 4250</a></div></div>
         <div class="ci"><div class="ci-icon">💬</div><div><h4>WhatsApp</h4><a href="https://wa.me/523228894250" target="_blank">322 889 4250</a></div></div>
         <div class="ci"><div class="ci-icon">✉️</div><div><h4>Email</h4><a href="mailto:cerrajeriasjuanito@gmail.com">cerrajeriasjuanito@gmail.com</a></div></div>
-        <div class="ci"><div class="ci-icon">📘</div><div><h4>Facebook</h4><a href="https://www.facebook.com/CerrajerosDisponibles24" target="_blank">Cerrajeria Juanito 24 Hrs. →</a></div></div>
+        <div class="ci"><div class="ci-icon">📘</div><div><h4>Facebook</h4><a href="https://www.facebook.com/share/1B9QzMEZv3/" target="_blank">Cerrajeria Juanito 24 Hrs. →</a></div></div>
         <div class="ci"><div class="ci-icon">🌐</div><div><h4>Google Maps</h4><a href="https://maps.app.goo.gl/UzDS3e2r8W19rs1p9" target="_blank"><span class="es">Ver ubicación →</span><span class="en">View location →</span></a></div></div>
       </div>
       <div>
@@ -387,7 +387,7 @@ footer p{color:var(--muted);font-size:.78rem;}
   <div class="logo" style="font-size:1.6rem;margin-bottom:10px;">🔑 CERRAJERÍA JUANITO</div>
   <div class="fsoc">
     <a href="https://wa.me/523228894250" target="_blank">💬</a>
-    <a href="https://www.facebook.com/CerrajerosDisponibles24" target="_blank" style="font-weight:900;color:var(--text);">f</a>
+    <a href="https://www.facebook.com/share/1B9QzMEZv3/" target="_blank" style="font-weight:900;color:var(--text);">f</a>
     <a href="https://maps.app.goo.gl/UzDS3e2r8W19rs1p9" target="_blank" style="color:var(--text);">G</a>
   </div>
   <p>📍 Zona Romántica, Puerto Vallarta · 📞 322 889 4250 · ✉️ cerrajeriasjuanito@gmail.com</p>
@@ -780,7 +780,7 @@ const TPLS={
 function setTpl(k){document.getElementById('ptxt').value=TPLS[k];document.getElementById('cnum').textContent=TPLS[k].length;}
 document.getElementById('ptxt').addEventListener('input',()=>document.getElementById('cnum').textContent=document.getElementById('ptxt').value.length);
 function getPTxt(){return document.getElementById('ptxt').value.trim();}
-function shareFB(){const t=getPTxt();if(!t){showToast('✏️ Escribe un mensaje primero');return;}window.open(`https://www.facebook.com/CerrajerosDisponibles24`);}
+function shareFB(){const t=getPTxt();if(!t){showToast('✏️ Escribe un mensaje primero');return;}window.open(`https://www.facebook.com/share/1B9QzMEZv3/`);}
 function shareTW(){const t=getPTxt();if(!t){showToast('✏️ Escribe un mensaje primero');return;}window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent('https://maps.app.goo.gl/UzDS3e2r8W19rs1p9')}`);}
 function shareWA(){const t=getPTxt();if(!t){showToast('✏️ Escribe un mensaje primero');return;}window.open(`https://wa.me/?text=${encodeURIComponent(t)}`);}
 function copyPost(){const t=getPTxt();if(!t){showToast('✏️ Nada que copiar');return;}navigator.clipboard.writeText(t).then(()=>showToast('✅ ¡Copiado!')).catch(()=>{document.getElementById('ptxt').select();document.execCommand('copy');showToast('✅ ¡Copiado!');});}
