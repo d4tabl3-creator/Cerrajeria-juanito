@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cerrajería Juanito | Locksmith Juanito – Puerto Vallarta</title>
+<meta name="description" content="Cerrajería profesional en la Zona Romántica, Puerto Vallarta. Llaves con chip, control automotriz, cerrajería residencial. 24 horas.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;600;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#F0C96A;--dark:#111;--dark2:#1a1a1a;--dark3:#242424;--steel:#2e2e2e;--text:#e8e8e0;--muted:#a0a090;--wa:#25D366;--fb:#1877F2;--tw:#0F1419;--red:#ef4444;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:'Raleway',sans-serif;overflow-x:hidden;}
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(10,10,10,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:space-between;padding:10px 24px;}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--gold);cursor:pointer;user-select:none;-webkit-user-select:none;}
+.lbtn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:4px 14px;font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:2px;cursor:pointer;transition:.2s;}
+.lbtn.active,.lbtn:hover{background:var(--gold);color:var(--dark);}
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.08),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(201,168,76,.05),transparent 50%),var(--dark);position:relative;overflow:hidden;}
+.grid-bg{position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(201,168,76,.04) 0,rgba(201,168,76,.04) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(0deg,rgba(201,168,76,.04) 0,rgba(201,168,76,.04) 1px,transparent 1px,transparent 60px);pointer-events:none;}
+.key-ico{font-size:5rem;display:block;animation:flt 3s ease-in-out infinite;margin-bottom:24px;filter:drop-shadow(0 0 20px rgba(201,168,76,.5));}
+@keyframes flt{0%,100%{transform:translateY(0) rotate(-10deg);}50%{transform:translateY(-12px) rotate(-5deg);}}
+.rbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:100px;padding:6px 18px;font-size:.85rem;font-weight:700;color:var(--gold-light);letter-spacing:1px;margin-bottom:20px;}
+h1.ht{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,12vw,8rem);letter-spacing:6px;line-height:.9;margin-bottom:8px;}
+h1.ht span{color:var(--gold);}
+.hsub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,3vw,1.4rem);color:var(--muted);margin-bottom:32px;}
+.hloc{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:40px;}
+.hctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn{background:var(--gold);color:var(--dark);padding:14px 32px;border:none;font-family:'Raleway',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.2s;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);}
+.btn:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn2{background:transparent;color:var(--text);padding:14px 32px;border:1px solid rgba(232,232,224,.3);font-family:'Raleway',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.2s;}
+.btn2:hover{border-color:var(--gold);color:var(--gold);}
+/* SHARED SECTION STYLES */
+section{padding:80px 24px;}
+.wrap{max-width:1100px;margin:0 auto;}
+.slabel{font-size:.68rem;letter-spacing:5px;font-weight:700;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+.stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:3px;line-height:1;margin-bottom:16px;}
+.stitle span{color:var(--gold);}
+.sdiv{width:60px;height:2px;background:var(--gold);margin-bottom:48px;}
+.fade{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s;}
+.fade.on{opacity:1;transform:none;}
+.en{display:none;}
+/* SERVICES */
+#services{background:var(--dark2);}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;}
+.scard{background:var(--dark3);padding:32px 26px;position:relative;overflow:hidden;transition:.3s;}
+.scard::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);transform:scaleY(0);transition:.3s;transform-origin:bottom;}
+.scard:hover::before{transform:scaleY(1);}
+.scard:hover{background:#2a2a2a;transform:translateX(4px);}
+.scard .ico{font-size:2.2rem;margin-bottom:14px;display:block;}
+.scard h3{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:2px;margin-bottom:8px;color:var(--gold-light);}
+.scard p{font-size:.86rem;color:var(--muted);line-height:1.6;}
+/* PRICING */
+#pricing{background:var(--dark);}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+.pcard{background:var(--dark3);border:1px solid rgba(201,168,76,.15);padding:26px 22px;position:relative;transition:.3s;}
+.pcard:hover{border-color:var(--gold);transform:translateY(-4px);}
+.pcard.featured{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.4);}
+.pcard .fbadge{position:absolute;top:-1px;right:12px;background:var(--gold);color:var(--dark);font-size:.62rem;font-weight:800;letter-spacing:2px;padding:4px 10px;text-transform:uppercase;}
+.pcard .pico{font-size:1.8rem;margin-bottom:10px;display:block;}
+.pcard h4{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:2px;color:var(--gold-light);margin-bottom:6px;}
+.pcard .pdesc{font-size:.78rem;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+.ptag{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:1px;color:var(--gold);}
+.pnote{font-size:.68rem;color:var(--muted);margin-top:4px;}
+/* GALLERY */
+#gallery{background:var(--dark2);}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.gitem{position:relative;aspect-ratio:1;overflow:hidden;background:var(--dark3);cursor:pointer;}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.gitem:hover img{transform:scale(1.08);}
+.gitem .gover{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:.3s;display:flex;align-items:center;justify-content:center;font-size:2rem;}
+.gitem:hover .gover{opacity:1;}
+.gempty{text-align:center;padding:60px 20px;color:var(--muted);font-style:italic;grid-column:1/-1;}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:2000;display:none;align-items:center;justify-content:center;}
+#lb.open{display:flex;}
+#lb img{max-width:90vw;max-height:90vh;object-fit:contain;}
+#lb-x{position:absolute;top:20px;right:24px;font-size:2rem;color:var(--gold);cursor:pointer;background:none;border:none;}
+/* PROMO */
+#promo{background:var(--gold);padding:48px 24px;text-align:center;}
+#promo h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,4rem);letter-spacing:4px;color:var(--dark);margin-bottom:8px;}
+#promo p{color:rgba(17,17,17,.75);font-weight:600;}
+.pbadge{display:inline-block;background:var(--dark);color:var(--gold);padding:8px 24px;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:4px;margin:14px auto 22px;}
+/* TESTIMONIALS */
+#testimonials{background:var(--dark3);}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;}
+.tcard{background:var(--dark2);border:1px solid rgba(201,168,76,.15);padding:26px;position:relative;}
+.tcard::before{content:'"';font-family:'Playfair Display',serif;font-size:5.5rem;color:rgba(201,168,76,.1);position:absolute;top:-8px;left:14px;line-height:1;}
+.tcard .ts{color:var(--gold);font-size:.82rem;margin-bottom:10px;}
+.tcard .tt{font-size:.88rem;color:var(--muted);line-height:1.7;font-style:italic;margin-bottom:14px;}
+.tcard .ta{font-weight:700;font-size:.76rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+#review-form{background:var(--dark2);border:1px solid rgba(201,168,76,.2);padding:32px;margin-top:40px;}
+#review-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:3px;color:var(--gold-light);margin-bottom:14px;}
+.star-row{display:flex;gap:8px;margin-bottom:14px;}
+.star-row span{font-size:1.8rem;cursor:pointer;color:var(--muted);transition:.2s;}
+.star-row span.lit{color:var(--gold);}
+.ff{width:100%;background:var(--dark);border:1px solid rgba(201,168,76,.2);color:var(--text);padding:11px 14px;font-family:'Raleway',sans-serif;font-size:.88rem;outline:none;margin-bottom:10px;transition:border-color .2s;}
+.ff:focus{border-color:var(--gold);}
+/* HOURS */
+#hours{background:var(--dark2);}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:40px;}
+.htable{width:100%;border-collapse:collapse;}
+.htable tr{border-bottom:1px solid rgba(201,168,76,.1);}
+.htable td{padding:11px 0;font-size:.88rem;}
+.htable td:last-child{text-align:right;color:var(--gold-light);font-weight:600;}
+.cred{color:var(--red)!important;}
+.ebox{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-left:4px solid var(--gold);padding:22px;margin-top:22px;}
+.ebox h4{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:2px;color:var(--gold);margin-bottom:6px;}
+.ebox p{font-size:.85rem;color:var(--muted);}
+/* CONTACT */
+#contact{background:var(--dark);}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:40px;}
+.ci{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
+.ci-icon{width:42px;height:42px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.ci h4{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.ci p,.ci a{font-size:.88rem;color:var(--muted);text-decoration:none;}
+.ci a:hover{color:var(--gold);}
+.mapbox{background:var(--dark3);border:1px solid rgba(201,168,76,.15);min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:28px;}
+.mlink{background:var(--gold);color:var(--dark);padding:10px 22px;text-decoration:none;font-weight:800;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;display:inline-block;transition:.2s;}
+.mlink:hover{background:var(--gold-light);}
+/* FOOTER */
+footer{background:#0a0a0a;padding:36px 24px;text-align:center;border-top:1px solid rgba(201,168,76,.15);}
+footer p{color:var(--muted);font-size:.78rem;}
+.fsoc{display:flex;gap:14px;justify-content:center;margin:18px 0;}
+.fsoc a{width:38px;height:38px;border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:.95rem;text-decoration:none;transition:.2s;}
+.fsoc a:hover{background:var(--gold);border-color:var(--gold);}
+/* FLOAT WA */
+#waf{position:fixed;bottom:26px;right:26px;z-index:980;}
+#wab{width:58px;height:58px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;animation:pwa 2.5s infinite;}
+@keyframes pwa{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.4);}50%{box-shadow:0 4px 28px rgba(37,211,102,.65),0 0 0 11px rgba(37,211,102,.07);}}
+#wab:hover{transform:scale(1.1);}
+#wap{display:none;position:absolute;bottom:68px;right:0;width:292px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.4);}
+#wap.open{display:block;animation:sup .3s ease;}
+@keyframes sup{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.wah{background:#128C7E;color:#fff;padding:14px 18px;display:flex;align-items:center;gap:11px;}
+.waav{width:40px;height:40px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.wah h4{font-size:.9rem;font-weight:700;}
+.wah small{font-size:.72rem;opacity:.8;display:block;}
+.wabody{padding:14px;background:#ECE5DD;}
+.wamsg{background:#fff;border-radius:8px 8px 8px 0;padding:11px 13px;font-size:.82rem;color:#333;line-height:1.5;box-shadow:0 1px 2px rgba(0,0,0,.1);margin-bottom:11px;}
+.waqb{display:flex;flex-direction:column;gap:7px;}
+.waqbtn{background:#fff;border:none;padding:9px 13px;border-radius:8px;text-align:left;font-size:.79rem;color:#075E54;font-weight:600;cursor:pointer;font-family:inherit;}
+.waqbtn:hover{background:#f0f0f0;}
+/* TOAST */
+#toast{position:fixed;bottom:96px;right:26px;background:var(--gold);color:var(--dark);padding:9px 18px;font-weight:700;font-size:.82rem;z-index:9999;opacity:0;pointer-events:none;transition:opacity .3s;border-radius:2px;}
+#toast.show{opacity:1;}
+
+/* ═══════════════════════════════════════
+   PANEL SECRETO — acceso: logo x5 clics
+═══════════════════════════════════════ */
+#secret{position:fixed;inset:0;background:rgba(0,0,0,.98);z-index:5000;display:none;flex-direction:column;}
+#secret.open{display:flex;}
+/* PIN */
+#pin-scr{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;}
+#pin-scr h2{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:5px;color:var(--gold);margin-bottom:6px;}
+.psub{color:var(--muted);font-size:.82rem;margin-bottom:28px;}
+.pdots{display:flex;gap:14px;margin-bottom:28px;}
+.pd{width:16px;height:16px;border-radius:50%;border:2px solid rgba(201,168,76,.35);background:transparent;transition:.2s;}
+.pd.filled{background:var(--gold);border-color:var(--gold);}
+.keypad{display:grid;grid-template-columns:repeat(3,76px);gap:10px;}
+.kk{width:76px;height:76px;background:var(--dark3);border:1px solid rgba(201,168,76,.2);color:var(--text);font-family:'Bebas Neue',sans-serif;font-size:1.7rem;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;}
+.kk:hover{background:rgba(201,168,76,.15);border-color:var(--gold);}
+.kk:active{background:rgba(201,168,76,.28);}
+#pin-err{color:var(--red);font-size:.82rem;margin-top:10px;height:20px;}
+/* DASHBOARD */
+#dash{display:none;flex-direction:column;flex:1;overflow:hidden;}
+#dash.open{display:flex;}
+.dh{background:var(--dark2);border-bottom:2px solid var(--gold);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.dh h1{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;color:var(--gold);}
+.dhx{background:transparent;border:1px solid rgba(201,168,76,.35);color:var(--gold);padding:7px 14px;font-family:'Raleway',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:2px;cursor:pointer;transition:.2s;}
+.dhx:hover{background:rgba(201,168,76,.1);}
+.dtabs{display:flex;gap:2px;background:var(--dark2);padding:0 22px;border-bottom:1px solid rgba(201,168,76,.12);flex-shrink:0;overflow-x:auto;}
+.dtab{background:transparent;border:none;color:var(--muted);padding:12px 18px;font-family:'Raleway',sans-serif;font-weight:700;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap;}
+.dtab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.dtab:hover{color:var(--text);}
+.dcnt{flex:1;overflow-y:auto;padding:30px 22px;}
+.dpanel{display:none;max-width:880px;margin:0 auto;}
+.dpanel.active{display:block;}
+.dt{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:3px;color:var(--gold-light);margin-bottom:6px;}
+.dsub{font-size:.8rem;color:var(--muted);margin-bottom:22px;}
+.dhr{height:1px;background:rgba(201,168,76,.12);margin:28px 0;}
+.dlabel{display:block;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.df{width:100%;background:var(--dark3);border:1px solid rgba(201,168,76,.2);color:var(--text);padding:11px 14px;font-family:'Raleway',sans-serif;font-size:.88rem;outline:none;margin-bottom:11px;transition:.2s;}
+.df:focus{border-color:var(--gold);}
+.dg{margin-bottom:18px;}
+.dbtn{background:var(--gold);color:var(--dark);padding:11px 26px;border:none;font-family:'Raleway',sans-serif;font-weight:800;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:7px;}
+.dbtn:hover{background:var(--gold-light);}
+.dred{background:var(--red);color:#fff;}
+.dred:hover{background:#dc2626;}
+/* upload zone */
+.uzn{border:2px dashed rgba(201,168,76,.3);padding:36px;text-align:center;cursor:pointer;transition:.2s;margin-bottom:22px;position:relative;}
+.uzn:hover{border-color:var(--gold);background:rgba(201,168,76,.04);}
+.uzn input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.uzn .uico{font-size:2.8rem;margin-bottom:10px;}
+.uzn p{color:var(--muted);font-size:.86rem;}
+.apg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;}
+.aph{position:relative;aspect-ratio:1;background:var(--dark3);}
+.aph img{width:100%;height:100%;object-fit:cover;}
+.aphdel{position:absolute;top:4px;right:4px;background:rgba(239,68,68,.85);border:none;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:.7rem;display:flex;align-items:center;justify-content:center;}
+/* price editor */
+.pegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:22px;}
+.pec{background:var(--dark3);border:1px solid rgba(201,168,76,.12);padding:18px;}
+.pec-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;}
+.pec h4{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold-light);}
+.pecdel{background:none;border:none;color:rgba(239,68,68,.5);cursor:pointer;font-size:1rem;transition:.2s;}
+.pecdel:hover{color:var(--red);}
+.newprice-form{background:var(--dark3);border:1px solid rgba(201,168,76,.15);padding:22px;margin-top:8px;}
+/* social panel */
+.tplrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.tplbtn{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.28);color:var(--gold);padding:6px 12px;font-size:.72rem;font-weight:700;letter-spacing:1px;cursor:pointer;font-family:'Raleway',sans-serif;border-radius:2px;transition:.2s;}
+.tplbtn:hover{background:rgba(201,168,76,.2);}
+#ptxt{width:100%;min-height:115px;background:var(--dark3);border:1px solid rgba(201,168,76,.2);color:var(--text);padding:14px;font-family:'Raleway',sans-serif;font-size:.88rem;resize:vertical;outline:none;transition:.2s;}
+#ptxt:focus{border-color:var(--gold);}
+.ccount{font-size:.72rem;color:var(--muted);text-align:right;margin:4px 0 14px;}
+.sbrow{display:flex;gap:10px;flex-wrap:wrap;}
+.sbtn{padding:11px 22px;border:none;font-family:'Raleway',sans-serif;font-weight:800;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:.2s;}
+.sbtn:hover{opacity:.82;transform:translateY(-2px);}
+.sfb{background:var(--fb);color:#fff;}
+.stw{background:var(--tw);color:#fff;border:1px solid #536471;}
+.swa{background:var(--wa);color:#fff;}
+.scp{background:var(--steel);color:var(--text);border:1px solid rgba(232,232,224,.2);}
+
+@media(max-width:600px){
+  .hctas{flex-direction:column;align-items:center;}
+  #wap{width:256px;}
+  .sbrow,.hctas{flex-direction:column;}
+  .dcnt{padding:20px 14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV — tocar logo 5 veces abre el panel secreto -->
+<nav id="nav">
+  <div class="logo" id="strig">🔑 JUANITO</div>
+  <div style="display:flex;gap:8px;">
+    <button class="lbtn active" onclick="setLang('es')">ES</button>
+    <button class="lbtn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="grid-bg"></div>
+  <div>
+    <div class="rbadge"><span style="color:var(--gold)">★★★★★</span><span>4.9 · 177 <span class="es">opiniones</span><span class="en">reviews</span></span></div>
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(24,119,242,.12);border:1px solid rgba(24,119,242,.3);border-radius:100px;padding:4px 14px;font-size:.75rem;font-weight:700;color:#6ba3f5;letter-spacing:1px;margin-bottom:16px;">📘 <span>943 <span class="es">seguidores en Facebook</span><span class="en">Facebook followers</span></span></div>
+    <span class="key-ico">🔑</span>
+    <h1 class="ht">CERRAJERÍA<br><span>JUANITO</span></h1>
+    <p class="hsub es">Tu cerrajero de confianza en Puerto Vallarta</p>
+    <p class="hsub en">Your trusted locksmith in Puerto Vallarta</p>
+    <div class="hloc">📍 <span class="es">Zona Romántica · Puerto Vallarta, Jal.</span><span class="en">Romantic Zone · Puerto Vallarta, Jal.</span></div>
+    <div class="hctas">
+      <a href="https://wa.me/523228894250?text=Hola%2C%20necesito%20un%20servicio%20de%20cerrajería" target="_blank" class="btn">💬 WhatsApp</a>
+      <a href="tel:3228894250" class="btn2">📞 322 889 4250</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <span class="slabel es">Lo que hacemos</span><span class="slabel en">What we do</span>
+    <h2 class="stitle es">NUESTROS <span>SERVICIOS</span></h2><h2 class="stitle en">OUR <span>SERVICES</span></h2>
+    <div class="sdiv"></div>
+    <div class="sgrid fade">
+      <div class="scard"><span class="ico">🚗</span><h3 class="es">Llaves con Chip</h3><h3 class="en">Chip Keys</h3><p class="es">Hacemos y programamos llaves con chip y controles remotos. Más del 80% de modelos.</p><p class="en">We make and program chip keys and remotes for most vehicles on the market.</p></div>
+      <div class="scard"><span class="ico">🏠</span><h3 class="es">Cerrajería Residencial</h3><h3 class="en">Residential Locksmith</h3><p class="es">Chapas, cerrojos, candados y cambio de cilindros para tu hogar.</p><p class="en">Locks, deadbolts, padlocks and cylinder replacement for your home.</p></div>
+      <div class="scard"><span class="ico">🔓</span><h3 class="es">Apertura de Urgencia</h3><h3 class="en">Emergency Lockout</h3><p class="es">¿Quedaste fuera de tu auto o casa? Urgencias las 24 horas, todos los días.</p><p class="en">Locked out of your car or home? We handle emergencies 24/7.</p></div>
+      <div class="scard"><span class="ico">🔧</span><h3 class="es">Reparación de Llaves</h3><h3 class="en">Key Repair</h3><p class="es">Reparamos llaves rotas, fracturadas y desgastadas. No tires tu llave original.</p><p class="en">We repair broken, cracked and worn keys. Don't throw away your original.</p></div>
+      <div class="scard"><span class="ico">📱</span><h3 class="es">Cambio de Carcasas</h3><h3 class="en">Key Shell Replacement</h3><p class="es">Cambio de carcasas para Chevrolet Trax, Sonic, Cruz y muchos más.</p><p class="en">Shell replacement for Chevrolet Trax, Sonic, Cruz and many more models.</p></div>
+      <div class="scard"><span class="ico">🌎</span><h3 class="es">Hablamos Inglés</h3><h3 class="en">We Speak English</h3><p class="es">Atendemos a toda la comunidad internacional de Puerto Vallarta en español e inglés.</p><p class="en">We proudly serve PVR's international community in English and Spanish.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <span class="slabel es">Precios de referencia</span><span class="slabel en">Reference pricing</span>
+    <h2 class="stitle es">COSTOS <span>BASE</span></h2><h2 class="stitle en">BASE <span>PRICING</span></h2>
+    <div class="sdiv"></div>
+    <div id="pgrid-pub" class="pgrid fade"></div>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:20px;text-align:center;" class="es">* Precios estimados. Sujetos a diagnóstico. Contáctanos para una cotización exacta.</p>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:20px;text-align:center;" class="en">* Estimated prices. Subject to diagnosis. Contact us for an exact quote.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <span class="slabel es">Nuestro trabajo</span><span class="slabel en">Our work</span>
+    <h2 class="stitle es">GALERÍA <span>DE SERVICIOS</span></h2><h2 class="stitle en">SERVICE <span>GALLERY</span></h2>
+    <div class="sdiv"></div>
+    <div id="pub-gallery" class="ggrid fade"></div>
+  </div>
+</section>
+<div id="lb"><button id="lb-x" onclick="document.getElementById('lb').classList.remove('open')">✕</button><img id="lb-img" src="" alt=""></div>
+
+<!-- PROMO -->
+<section id="promo">
+  <div class="wrap fade">
+    <h2 class="es">🎉 OFERTA ESPECIAL</h2><h2 class="en">🎉 SPECIAL OFFER</h2>
+    <div class="pbadge">20% DESCUENTO / OFF</div>
+    <p class="es">Reparación de llaves quebradas o rotas · Muestra esta página al llegar</p>
+    <p class="en">Broken or cracked key repair · Show this page when you arrive</p><br>
+    <a href="https://wa.me/523228894250?text=Hola%2C%20vi%20la%20oferta%20del%2020%25%20en%20su%20p%C3%A1gina" target="_blank" class="btn" style="margin-top:16px;display:inline-flex;">💬 <span class="es">Reclamar por WhatsApp</span><span class="en">Claim on WhatsApp</span></a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <span class="slabel es">Lo que dicen nuestros clientes</span><span class="slabel en">What our clients say</span>
+    <h2 class="stitle es">OPINIONES <span>REALES</span></h2><h2 class="stitle en">REAL <span>REVIEWS</span></h2>
+    <div class="sdiv"></div>
+    <div id="tgrid" class="tgrid fade"></div>
+    <div style="text-align:center;margin-top:28px;">
+      <a href="https://maps.app.goo.gl/UzDS3e2r8W19rs1p9" target="_blank" class="btn2" style="display:inline-flex;">⭐ <span class="es">Ver todas en Google</span><span class="en">See all on Google</span></a>
+    </div>
+    <div id="review-form">
+      <h3 class="es">✍️ DEJA TU RESEÑA</h3><h3 class="en">✍️ LEAVE A REVIEW</h3>
+      <div class="star-row" id="rev-stars"><span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span></div>
+      <input class="ff" id="rev-name" placeholder="Tu nombre / Your name">
+      <textarea class="ff" id="rev-text" rows="3" placeholder="Tu opinión / Your review..." style="resize:vertical;"></textarea>
+      <button class="btn" onclick="submitReview()"><span class="es">Enviar reseña</span><span class="en">Submit review</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section id="hours">
+  <div class="wrap">
+    <div class="hgrid fade">
+      <div>
+        <span class="slabel es">Horario de atención</span><span class="slabel en">Business Hours</span>
+        <h2 class="stitle es">HORARIO <span>REGULAR</span></h2><h2 class="stitle en">REGULAR <span>HOURS</span></h2>
+        <div class="sdiv"></div>
+        <table class="htable" id="hours-pub"></table>
+      </div>
+      <div>
+        <div class="ebox">
+          <h4>⚡ <span class="es">URGENCIAS 24 HRS</span><span class="en">24/7 EMERGENCY</span></h4>
+          <p class="es">Para emergencias fuera de horario, contáctanos por WhatsApp. Respondemos toda clase de urgencias.</p>
+          <p class="en">For after-hours emergencies, contact us on WhatsApp. We handle all locksmith emergencies.</p><br>
+          <a href="https://wa.me/523228894250?text=URGENCIA%3A%20Necesito%20ayuda%20de%20cerrajería%20ahora" target="_blank" class="btn" style="margin-top:14px;display:inline-flex;font-size:.76rem;">🚨 <span class="es">Enviar Urgencia</span><span class="en">Send Emergency</span></a>
+        </div>
+        <div style="background:var(--dark3);border:1px solid rgba(201,168,76,.12);padding:22px;margin-top:14px;">
+          <h4 style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--gold);margin-bottom:6px;">🌎 <span class="es">Hablamos Inglés</span><span class="en">We Speak English</span></h4>
+          <p style="font-size:.84rem;color:var(--muted);" class="es">Atendemos con gusto a toda la comunidad internacional de Puerto Vallarta.</p>
+          <p style="font-size:.84rem;color:var(--muted);" class="en">We proudly serve Puerto Vallarta's international community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <span class="slabel es">Encuéntranos</span><span class="slabel en">Find us</span>
+    <h2 class="stitle es">CONTACTO <span>& UBICACIÓN</span></h2><h2 class="stitle en">CONTACT <span>& LOCATION</span></h2>
+    <div class="sdiv"></div>
+    <div class="cgrid fade">
+      <div>
+        <div class="ci"><div class="ci-icon">📍</div><div><h4 class="es">Dirección</h4><h4 class="en">Address</h4><p>Aquiles Serdán 254-Int. A<br>Zona Romántica, Emiliano Zapata<br>48380 Puerto Vallarta, Jal.</p></div></div>
+        <div class="ci"><div class="ci-icon">📞</div><div><h4 class="es">Teléfono</h4><h4 class="en">Phone</h4><a href="tel:3228894250">322 889 4250</a></div></div>
+        <div class="ci"><div class="ci-icon">💬</div><div><h4>WhatsApp</h4><a href="https://wa.me/523228894250" target="_blank">322 889 4250</a></div></div>
+        <div class="ci"><div class="ci-icon">✉️</div><div><h4>Email</h4><a href="mailto:cerrajeriasjuanito@gmail.com">cerrajeriasjuanito@gmail.com</a></div></div>
+        <div class="ci"><div class="ci-icon">📘</div><div><h4>Facebook</h4><a href="https://www.facebook.com/CerrajerosDisponibles24" target="_blank">Cerrajeria Juanito 24 Hrs. →</a></div></div>
+        <div class="ci"><div class="ci-icon">🌐</div><div><h4>Google Maps</h4><a href="https://maps.app.goo.gl/UzDS3e2r8W19rs1p9" target="_blank"><span class="es">Ver ubicación →</span><span class="en">View location →</span></a></div></div>
+      </div>
+      <div>
+        <div class="mapbox">
+          <div style="font-size:2.8rem;">🗺️</div>
+          <p class="es"><strong style="color:var(--gold)">Zona Romántica</strong><br>Aquiles Serdán 254-Int. A<br>Puerto Vallarta, Jalisco</p>
+          <p class="en"><strong style="color:var(--gold)">Romantic Zone</strong><br>Aquiles Serdán 254-Int. A<br>Puerto Vallarta, Jalisco</p>
+          <a href="https://maps.app.goo.gl/UzDS3e2r8W19rs1p9" target="_blank" class="mlink">📍 <span class="es">Abrir en Google Maps</span><span class="en">Open in Google Maps</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo" style="font-size:1.6rem;margin-bottom:10px;">🔑 CERRAJERÍA JUANITO</div>
+  <div class="fsoc">
+    <a href="https://wa.me/523228894250" target="_blank">💬</a>
+    <a href="https://www.facebook.com/CerrajerosDisponibles24" target="_blank" style="font-weight:900;color:var(--text);">f</a>
+    <a href="https://maps.app.goo.gl/UzDS3e2r8W19rs1p9" target="_blank" style="color:var(--text);">G</a>
+  </div>
+  <p>📍 Zona Romántica, Puerto Vallarta · 📞 322 889 4250 · ✉️ cerrajeriasjuanito@gmail.com</p>
+  <p style="margin-top:6px;font-size:.72rem;opacity:.4;">© 2025 Cerrajería Juanito · Todos los derechos reservados</p>
+</footer>
+
+<!-- FLOAT WA -->
+<div id="waf">
+  <div id="wap">
+    <div class="wah"><div class="waav">🔑</div><div><h4>Cerrajería Juanito</h4><small class="es">¿En qué te ayudamos?</small><small class="en">How can we help?</small></div></div>
+    <div class="wabody">
+      <div class="wamsg es">👋 Hola, somos Cerrajería Juanito. Especialistas en llaves, chapas y urgencias 24hrs en Puerto Vallarta.</div>
+      <div class="wamsg en">👋 Hi! We're Locksmith Juanito. Specialists in keys, locks and 24/7 emergencies in Puerto Vallarta.</div>
+      <div class="waqb">
+        <button class="waqbtn" onclick="openWA('Hola%2C%20necesito%20duplicar%20una%20llave%20con%20chip')">🚗 Necesito llave con chip</button>
+        <button class="waqbtn" onclick="openWA('Necesito%20una%20cotizaci%C3%B3n%20de%20cerrajería%20residencial')">🏠 Cerrajería residencial</button>
+        <button class="waqbtn" onclick="openWA('URGENCIA%3A%20Estoy%20encerrado%20fuera%20de%20mi%20auto')">🚨 ¡Es una urgencia!</button>
+        <button class="waqbtn" onclick="openWA('I+need+locksmith+service+in+Puerto+Vallarta')">🇺🇸 I need your service</button>
+      </div>
+    </div>
+  </div>
+  <button id="wab" onclick="toggleWA()">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </button>
+</div>
+<div id="toast"></div>
+
+<!-- ═══════════════════════════════════════
+     PANEL SECRETO DEL PROPIETARIO
+     Acceso: tocar "🔑 JUANITO" 5 veces
+═══════════════════════════════════════ -->
+<div id="secret">
+  <!-- PIN -->
+  <div id="pin-scr">
+    <h2>🔐 ACCESO PRIVADO</h2>
+    <p class="psub">Ingresa tu PIN de propietario · PIN inicial: 1234</p>
+    <div class="pdots"><div class="pd" id="pd0"></div><div class="pd" id="pd1"></div><div class="pd" id="pd2"></div><div class="pd" id="pd3"></div></div>
+    <div class="keypad">
+      <button class="kk" onclick="pk('1')">1</button><button class="kk" onclick="pk('2')">2</button><button class="kk" onclick="pk('3')">3</button>
+      <button class="kk" onclick="pk('4')">4</button><button class="kk" onclick="pk('5')">5</button><button class="kk" onclick="pk('6')">6</button>
+      <button class="kk" onclick="pk('7')">7</button><button class="kk" onclick="pk('8')">8</button><button class="kk" onclick="pk('9')">9</button>
+      <button class="kk" onclick="closeSec()" style="font-size:.9rem;color:var(--muted);">✕ Salir</button>
+      <button class="kk" onclick="pk('0')">0</button>
+      <button class="kk" onclick="pdel()" style="font-size:1.3rem;">⌫</button>
+    </div>
+    <div id="pin-err"></div>
+  </div>
+  <!-- DASHBOARD -->
+  <div id="dash">
+    <div class="dh">
+      <h1>⚙️ PANEL DEL PROPIETARIO</h1>
+      <button class="dhx" onclick="closeSec()">✕ SALIR</button>
+    </div>
+    <div class="dtabs">
+      <button class="dtab active" onclick="showTab('photos')">📸 Galería</button>
+      <button class="dtab" onclick="showTab('prices')">💰 Costos</button>
+      <button class="dtab" onclick="showTab('social')">📣 Redes Sociales</button>
+      <button class="dtab" onclick="showTab('reviews')">⭐ Reseñas</button>
+      <button class="dtab" onclick="showTab('settings')">🔧 Ajustes</button>
+    </div>
+    <div class="dcnt">
+
+      <!-- GALERÍA -->
+      <div class="dpanel active" id="dp-photos">
+        <div class="dt">📸 GESTIÓN DE GALERÍA</div>
+        <p class="dsub">Las fotos que subas aquí aparecerán en la sección "Galería de Servicios" de la página pública. Formatos: JPG, PNG, WEBP · Máx. 2 MB por foto.</p>
+        <div class="uzn" id="drop-zone">
+          <input type="file" id="photo-input" accept="image/*" multiple onchange="handlePhotos(this.files)">
+          <div class="uico">🖼️</div>
+          <p><strong style="color:var(--gold)">Toca aquí o arrastra fotos</strong><br><small style="opacity:.6;">Las fotos aparecerán al público de inmediato</small></p>
+        </div>
+        <p style="font-size:.78rem;color:var(--muted);margin-bottom:14px;" id="ph-count"></p>
+        <div class="apg" id="admin-pg"></div>
+      </div>
+
+      <!-- COSTOS -->
+      <div class="dpanel" id="dp-prices">
+        <div class="dt">💰 GESTIÓN DE COSTOS</div>
+        <p class="dsub">Agrega, edita o elimina los precios que aparecen en la página pública. Toca 🗑️ para eliminar cualquier servicio.</p>
+        <div class="pegrid" id="price-ed-grid"></div>
+        <div class="newprice-form">
+          <p style="font-size:.76rem;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:16px;text-transform:uppercase;">➕ Agregar nuevo servicio</p>
+          <div style="display:grid;grid-template-columns:80px 1fr;gap:10px;">
+            <div><label class="dlabel">Icono</label><input class="df" id="np-ico" placeholder="🔑" style="width:100%"></div>
+            <div><label class="dlabel">Precio (ej: Desde $1,500)</label><input class="df" id="np-price" placeholder="Desde $800" style="width:100%"></div>
+          </div>
+          <div class="dg"><label class="dlabel">Nombre del servicio</label><input class="df" id="np-name" placeholder="Apertura de vehículo"></div>
+          <div class="dg"><label class="dlabel">Descripción breve</label><input class="df" id="np-desc" placeholder="Apertura sin daños, 30 minutos"></div>
+          <div class="dg"><label class="dlabel">Nota (opcional)</label><input class="df" id="np-note" placeholder="Sujeto a diagnóstico"></div>
+          <label style="display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);margin-bottom:16px;cursor:pointer;"><input type="checkbox" id="np-feat"> <span>Marcar como servicio destacado (Popular)</span></label>
+          <button class="dbtn" onclick="addPrice()">➕ Agregar servicio</button>
+        </div>
+      </div>
+
+      <!-- REDES SOCIALES -->
+      <div class="dpanel" id="dp-social">
+        <div class="dt">📣 PUBLICAR EN REDES SOCIALES</div>
+        <p class="dsub">Escribe tu mensaje o usa una plantilla, luego comparte directo en Facebook, X (Twitter) o WhatsApp con un clic.</p>
+        <div class="tplrow">
+          <button class="tplbtn" onclick="setTpl('oferta')">🏷️ Oferta especial</button>
+          <button class="tplbtn" onclick="setTpl('chip')">🚗 Llaves con chip</button>
+          <button class="tplbtn" onclick="setTpl('urgencia')">⚡ Servicio 24 hrs</button>
+          <button class="tplbtn" onclick="setTpl('carcasa')">📱 Cambio carcasa</button>
+          <button class="tplbtn" onclick="setTpl('english')">🇺🇸 English post</button>
+        </div>
+        <textarea id="ptxt" placeholder="Escribe aquí tu mensaje promocional..."></textarea>
+        <div class="ccount"><span id="cnum">0</span> caracteres</div>
+        <div class="sbrow">
+          <button class="sbtn sfb" onclick="shareFB()"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</button>
+          <button class="sbtn stw" onclick="shareTW()"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</button>
+          <button class="sbtn swa" onclick="shareWA()"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>WhatsApp</button>
+          <button class="sbtn scp" onclick="copyPost()">📋 Copiar</button>
+        </div>
+      </div>
+
+      <!-- RESEÑAS -->
+      <div class="dpanel" id="dp-reviews">
+        <div class="dt">⭐ GESTIÓN DE RESEÑAS</div>
+        <p class="dsub">Aprueba o elimina las reseñas enviadas por clientes desde la página. Las aprobadas aparecen en el sitio público.</p>
+        <div id="rev-admin-list"></div>
+      </div>
+
+      <!-- AJUSTES -->
+      <div class="dpanel" id="dp-settings">
+        <div class="dt">🔧 AJUSTES DEL PANEL</div>
+        <p class="dsub">Cambia tu PIN de acceso al panel privado.</p>
+        <div style="max-width:300px;">
+          <div class="dg"><label class="dlabel">PIN actual</label><input class="df" type="password" id="pin-cur" maxlength="4" placeholder="••••"></div>
+          <div class="dg"><label class="dlabel">Nuevo PIN (4 dígitos)</label><input class="df" type="password" id="pin-new" maxlength="4" placeholder="••••"></div>
+          <div class="dg"><label class="dlabel">Confirmar nuevo PIN</label><input class="df" type="password" id="pin-con" maxlength="4" placeholder="••••"></div>
+          <button class="dbtn" onclick="changePin()">💾 Guardar PIN</button>
+        </div>
+        <div class="dhr"></div>
+        <p style="font-size:.76rem;font-weight:700;letter-spacing:2px;color:var(--red);margin-bottom:12px;text-transform:uppercase;">⚠️ Zona de peligro</p>
+        <button class="dbtn dred" onclick="if(confirm('¿Borrar todos los datos? No se puede deshacer.')){clearAll();}">🗑️ Restablecer todos los datos</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ── STORAGE ──
+const S={
+  get:(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch{return d;}},
+  set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch{showToast('⚠️ Almacenamiento lleno');}}
+};
+
+// ── DEFAULT DATA ──
+const DP=[
+  {ico:'🚗',name:'Apertura de vehículo',desc:'Apertura sin daños, menos de 30 min',price:'Desde $1,500',note:'Precio estimado · Varía según modelo',featured:true},
+  {ico:'🏠',name:'Cambio de chapa residencial',desc:'Instalación de chapa nueva, incluye mano de obra',price:'Desde $2,400',note:'Incluye diagnóstico gratuito',featured:false},
+  {ico:'🔑',name:'Duplicado de llave simple',desc:'Copia de llave estándar, entrega inmediata',price:'Desde $80',note:'',featured:false},
+  {ico:'📡',name:'Llave con chip + programación',desc:'Transpondedor programado para tu vehículo',price:'Desde $800',note:'Depende del modelo del vehículo',featured:false},
+  {ico:'📱',name:'Cambio de carcasa',desc:'Chevrolet, Honda, Ford y muchos más',price:'Desde $350',note:'Pregunta por tu modelo sin compromiso',featured:false},
+  {ico:'🔓',name:'Apertura residencial',desc:'Apertura de puerta sin daños',price:'Desde $600',note:'',featured:false},
+];
+const DR=[
+  {stars:5,text:'Excelente servicio, abrió la puerta de la camioneta súper rápido. Precio justo, un muy buen trabajo y personas muy amables. ¡Muchas gracias!',author:'Reseña Google Maps',approved:true},
+  {stars:5,text:'Queremos agradecer el excelente servicio que nos brindó Cerrajería Juanito. Siempre disponibles para nosotros.',author:'Aldo Brambila',approved:true},
+  {stars:5,text:'Muy agradecida por la atención y rapidez. Profesionales y con precios justos. 100% recomendados.',author:'Reseña Google Maps',approved:true},
+];
+const DH=[
+  {day:'Lunes',dayEn:'Monday',open:'8:30 am',close:'6:00 pm',closed:false},
+  {day:'Martes',dayEn:'Tuesday',open:'8:30 am',close:'6:00 pm',closed:false},
+  {day:'Miércoles',dayEn:'Wednesday',open:'8:30 am',close:'6:00 pm',closed:false},
+  {day:'Jueves',dayEn:'Thursday',open:'8:30 am',close:'6:00 pm',closed:false},
+  {day:'Viernes',dayEn:'Friday',open:'8:30 am',close:'6:00 pm',closed:false},
+  {day:'Sábado',dayEn:'Saturday',open:'8:30 am',close:'4:00 pm',closed:false},
+  {day:'Domingo',dayEn:'Sunday',open:'',close:'',closed:true},
+];
+
+function initData(){
+  if(!S.get('prices',null)) S.set('prices',DP);
+  if(!S.get('reviews',null)) S.set('reviews',DR);
+  if(!S.get('hours',null)) S.set('hours',DH);
+  if(!S.get('photos',null)) S.set('photos',[]);
+  if(!S.get('pin',null)) S.set('pin','1234');
+}
+
+// ── LANGUAGE ──
+let lang='es';
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  document.querySelectorAll('.es').forEach(e=>e.style.display=l==='es'?'':'none');
+  document.querySelectorAll('.en').forEach(e=>e.style.display=l==='en'?'':'none');
+  renderHours();
+}
+
+// ── PUBLIC RENDERS ──
+function renderPrices(){
+  const prices=S.get('prices',DP);
+  document.getElementById('pgrid-pub').innerHTML=prices.map(p=>`
+    <div class="pcard${p.featured?' featured':''}">
+      ${p.featured?'<div class="fbadge">Popular</div>':''}
+      <span class="pico">${p.ico}</span>
+      <h4>${p.name}</h4>
+      <p class="pdesc">${p.desc}</p>
+      <div class="ptag">${p.price}</div>
+      ${p.note?`<p class="pnote">${p.note}</p>`:''}
+    </div>`).join('');
+}
+
+function renderGallery(){
+  const photos=S.get('photos',[]);
+  const g=document.getElementById('pub-gallery');
+  if(!photos.length){
+    g.innerHTML=`<div class="gempty"><div style="font-size:3rem;margin-bottom:12px;">📷</div><p class="es">Las fotos de nuestros servicios aparecerán aquí</p><p class="en">Our service photos will appear here</p></div>`;
+    return;
+  }
+  g.innerHTML=photos.map((p,i)=>`<div class="gitem" onclick="openLB('${p}')"><img src="${p}" alt="Servicio ${i+1}" loading="lazy"><div class="gover">🔍</div></div>`).join('');
+}
+
+function renderReviews(){
+  const reviews=S.get('reviews',DR).filter(r=>r.approved);
+  document.getElementById('tgrid').innerHTML=reviews.map(r=>`
+    <div class="tcard">
+      <div class="ts">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
+      <p class="tt">"${r.text}"</p>
+      <div class="ta">— ${r.author}</div>
+    </div>`).join('');
+}
+
+function renderHours(){
+  const h=S.get('hours',DH);
+  document.getElementById('hours-pub').innerHTML=h.map(row=>`
+    <tr><td>${lang==='en'?row.dayEn:row.day}</td>
+    <td class="${row.closed?'cred':''}">${row.closed?(lang==='en'?'Closed':'Cerrado'):`${row.open} – ${row.close}`}</td></tr>`).join('');
+}
+
+function openLB(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');}
+
+// ── PUBLIC REVIEW FORM ──
+let revStars=5;
+document.querySelectorAll('#rev-stars span').forEach((s,i)=>{
+  s.classList.toggle('lit',i<5);
+  s.addEventListener('click',()=>{
+    revStars=i+1;
+    document.querySelectorAll('#rev-stars span').forEach((x,j)=>x.classList.toggle('lit',j<revStars));
+  });
+});
+function submitReview(){
+  const name=document.getElementById('rev-name').value.trim();
+  const text=document.getElementById('rev-text').value.trim();
+  if(!name||!text){showToast('✏️ Escribe tu nombre y reseña');return;}
+  const r=S.get('reviews',DR);
+  r.push({stars:revStars,text,author:name,approved:false});
+  S.set('reviews',r);
+  document.getElementById('rev-name').value='';
+  document.getElementById('rev-text').value='';
+  showToast('✅ ¡Gracias! Tu reseña está en revisión');
+}
+
+// ── SECRET TRIGGER: logo x5 ──
+let cc=0,ct;
+document.getElementById('strig').addEventListener('click',()=>{
+  cc++;clearTimeout(ct);
+  if(cc>=5){cc=0;openSec();}
+  else ct=setTimeout(()=>cc=0,2500);
+});
+function openSec(){
+  document.getElementById('secret').classList.add('open');
+  document.getElementById('pin-scr').style.display='flex';
+  document.getElementById('dash').classList.remove('open');
+  pi='';updateDots();
+  document.getElementById('pin-err').textContent='';
+}
+function closeSec(){document.getElementById('secret').classList.remove('open');pi='';updateDots();}
+
+// ── PIN ──
+let pi='';
+function pk(d){if(pi.length>=4)return;pi+=d;updateDots();if(pi.length===4)checkPin();}
+function pdel(){pi=pi.slice(0,-1);updateDots();}
+function updateDots(){for(let i=0;i<4;i++)document.getElementById('pd'+i).classList.toggle('filled',i<pi.length);}
+function checkPin(){
+  if(pi===S.get('pin','1234')){
+    document.getElementById('pin-scr').style.display='none';
+    document.getElementById('dash').classList.add('open');
+    renderAPh();renderAPrices();renderARevs();
+  }else{
+    document.getElementById('pin-err').textContent='PIN incorrecto. Intenta de nuevo.';
+    setTimeout(()=>{pi='';updateDots();document.getElementById('pin-err').textContent='';},900);
+  }
+}
+function changePin(){
+  const cur=document.getElementById('pin-cur').value;
+  const nw=document.getElementById('pin-new').value;
+  const con=document.getElementById('pin-con').value;
+  if(cur!==S.get('pin','1234')){showToast('❌ PIN actual incorrecto');return;}
+  if(nw.length!==4||!/^\d{4}$/.test(nw)){showToast('⚠️ El PIN debe ser exactamente 4 dígitos');return;}
+  if(nw!==con){showToast('⚠️ Los PINs no coinciden');return;}
+  S.set('pin',nw);showToast('✅ PIN actualizado correctamente');
+  ['pin-cur','pin-new','pin-con'].forEach(id=>document.getElementById(id).value='');
+}
+
+// ── DASHBOARD TABS ──
+const TABS=['photos','prices','social','reviews','settings'];
+function showTab(id){
+  document.querySelectorAll('.dtab').forEach((t,i)=>t.classList.toggle('active',TABS[i]===id));
+  document.querySelectorAll('.dpanel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('dp-'+id).classList.add('active');
+}
+
+// ── PHOTO MANAGER ──
+function handlePhotos(files){
+  const photos=S.get('photos',[]);
+  let done=0;
+  Array.from(files).forEach(f=>{
+    if(!f.type.startsWith('image/')){showToast('⚠️ Solo imágenes');return;}
+    if(f.size>2097152){showToast('⚠️ '+f.name+' supera 2 MB');return;}
+    const r=new FileReader();
+    r.onload=e=>{
+      photos.push(e.target.result);done++;
+      S.set('photos',photos);
+      renderAPh();renderGallery();
+      if(done===files.length)showToast('✅ '+done+' foto(s) subida(s)');
+    };
+    r.readAsDataURL(f);
+  });
+}
+function delPh(i){const p=S.get('photos',[]);p.splice(i,1);S.set('photos',p);renderAPh();renderGallery();showToast('🗑️ Foto eliminada');}
+function renderAPh(){
+  const p=S.get('photos',[]);
+  document.getElementById('ph-count').textContent=p.length+' foto(s) en la galería pública';
+  document.getElementById('admin-pg').innerHTML=p.length?
+    p.map((ph,i)=>`<div class="aph"><img src="${ph}"><button class="aphdel" onclick="delPh(${i})">✕</button></div>`).join(''):
+    '<p style="color:var(--muted);font-size:.84rem;">Aún no hay fotos. Sube las primeras arriba.</p>';
+}
+
+// ── PRICE MANAGER ──
+function addPrice(){
+  const ico=document.getElementById('np-ico').value.trim()||'🔑';
+  const name=document.getElementById('np-name').value.trim();
+  const desc=document.getElementById('np-desc').value.trim();
+  const price=document.getElementById('np-price').value.trim();
+  const note=document.getElementById('np-note').value.trim();
+  const featured=document.getElementById('np-feat').checked;
+  if(!name||!price){showToast('✏️ Nombre y precio son obligatorios');return;}
+  const p=S.get('prices',DP);p.push({ico,name,desc,price,note,featured});
+  S.set('prices',p);renderAPrices();renderPrices();
+  ['np-ico','np-name','np-desc','np-price','np-note'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('np-feat').checked=false;
+  showToast('✅ Servicio agregado a la página pública');
+}
+function delPrice(i){const p=S.get('prices',DP);p.splice(i,1);S.set('prices',p);renderAPrices();renderPrices();showToast('🗑️ Servicio eliminado');}
+function renderAPrices(){
+  const p=S.get('prices',DP);
+  document.getElementById('price-ed-grid').innerHTML=p.map((item,i)=>`
+    <div class="pec">
+      <div class="pec-top"><h4>${item.ico} ${item.name}</h4><button class="pecdel" onclick="delPrice(${i})">🗑️</button></div>
+      <p style="font-size:.76rem;color:var(--muted);margin-bottom:8px;">${item.desc}</p>
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--gold);">${item.price}</p>
+      ${item.featured?'<span style="font-size:.65rem;color:var(--gold);letter-spacing:1px;">★ DESTACADO</span>':''}
+    </div>`).join('');
+}
+
+// ── REVIEW ADMIN ──
+function approveRev(i){const r=S.get('reviews',DR);r[i].approved=true;S.set('reviews',r);renderARevs();renderReviews();showToast('✅ Reseña aprobada y publicada');}
+function delRev(i){const r=S.get('reviews',DR);r.splice(i,1);S.set('reviews',r);renderARevs();renderReviews();showToast('🗑️ Reseña eliminada');}
+function renderARevs(){
+  const r=S.get('reviews',DR);
+  const el=document.getElementById('rev-admin-list');
+  if(!r.length){el.innerHTML='<p style="color:var(--muted);">No hay reseñas aún.</p>';return;}
+  el.innerHTML=r.map((item,i)=>`
+    <div style="background:var(--dark3);border:1px solid rgba(201,168,76,${item.approved?.25:.1});padding:18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+      <div style="flex:1;">
+        <div style="color:var(--gold);font-size:.8rem;margin-bottom:4px;">
+          ${'★'.repeat(item.stars)}${'☆'.repeat(5-item.stars)} 
+          ${item.approved?'<span style="color:#22c55e;font-size:.68rem;letter-spacing:1px;margin-left:6px;">✓ PUBLICADA</span>':'<span style="color:#f59e0b;font-size:.68rem;letter-spacing:1px;margin-left:6px;">⏳ PENDIENTE</span>'}
+        </div>
+        <p style="font-size:.84rem;color:var(--muted);font-style:italic;margin-bottom:4px;">"${item.text}"</p>
+        <p style="font-size:.74rem;color:var(--gold);font-weight:700;">— ${item.author}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+        ${!item.approved?`<button class="dbtn" style="padding:6px 12px;font-size:.68rem;" onclick="approveRev(${i})">✓ Aprobar</button>`:''}
+        <button class="dbtn dred" style="padding:6px 12px;font-size:.68rem;" onclick="delRev(${i})">🗑️</button>
+      </div>
+    </div>`).join('');
+}
+
+// ── SOCIAL MEDIA ──
+const TPLS={
+  oferta:`🔑 ¡OFERTA ESPECIAL en Cerrajería Juanito! 🎉\n\n20% de DESCUENTO en reparación de llaves quebradas o rotas.\nMuestra este mensaje al llegar.\n\n📍 Zona Romántica, Puerto Vallarta\n📞 322 889 4250\n\n#CerrajeríaJuanito #PuertoVallarta #Cerrajero`,
+  chip:`🚗 ¿Perdiste la llave con CHIP de tu auto?\n\nEn Cerrajería Juanito la hacemos y programamos en minutos.\n✅ Más del 80% de llaves del mercado · ✅ Precio justo · ✅ Servicio exprés\n\n📍 Zona Romántica, PVR · 📞 322 889 4250\n\n#LlavesConChip #Cerrajero #PuertoVallarta`,
+  urgencia:`⚡ CERRAJERÍA LAS 24 HORAS ⚡\n\n¿Quedaste fuera de tu auto o casa? ¡Te ayudamos ahora!\n\n🔓 Aperturas de urgencia\n🚗 Llaves automotrices\n🏠 Cerrajería residencial\n\n📞 322 889 4250\n\n#Urgencias #CerrajeroNocturno #PuertoVallarta`,
+  carcasa:`📱 ¿Rota la carcasa de tu control?\n\nCambios de carcasa para: Chevrolet Trax · Sonic · Cruz · Honda · Ford y más.\n\nPregunta por tu modelo sin compromiso.\n📍 Zona Romántica · 📞 322 889 4250\n\n#Carcasas #PuertoVallarta #Cerrajería`,
+  english:`🔑 LOCKSMITH JUANITO – Puerto Vallarta's trusted locksmith! 🇲🇽\n\n✅ Chip keys & remote programming\n✅ Residential & automotive locksmith\n✅ 24-hour emergency service\n✅ We speak English!\n\n📍 Romantic Zone · 📞 322 889 4250\n\n#LocksmithPuertoVallarta #RomanticZone #PVR`
+};
+function setTpl(k){document.getElementById('ptxt').value=TPLS[k];document.getElementById('cnum').textContent=TPLS[k].length;}
+document.getElementById('ptxt').addEventListener('input',()=>document.getElementById('cnum').textContent=document.getElementById('ptxt').value.length);
+function getPTxt(){return document.getElementById('ptxt').value.trim();}
+function shareFB(){const t=getPTxt();if(!t){showToast('✏️ Escribe un mensaje primero');return;}window.open(`https://www.facebook.com/CerrajerosDisponibles24`);}
+function shareTW(){const t=getPTxt();if(!t){showToast('✏️ Escribe un mensaje primero');return;}window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent('https://maps.app.goo.gl/UzDS3e2r8W19rs1p9')}`);}
+function shareWA(){const t=getPTxt();if(!t){showToast('✏️ Escribe un mensaje primero');return;}window.open(`https://wa.me/?text=${encodeURIComponent(t)}`);}
+function copyPost(){const t=getPTxt();if(!t){showToast('✏️ Nada que copiar');return;}navigator.clipboard.writeText(t).then(()=>showToast('✅ ¡Copiado!')).catch(()=>{document.getElementById('ptxt').select();document.execCommand('copy');showToast('✅ ¡Copiado!');});}
+
+// ── CLEAR ALL ──
+function clearAll(){
+  ['prices','reviews','hours','photos','pin'].forEach(k=>localStorage.removeItem(k));
+  initData();renderPrices();renderGallery();renderReviews();renderHours();
+  renderAPh();renderAPrices();renderARevs();showToast('✅ Datos restablecidos');
+}
+
+// ── WA FLOAT ──
+function toggleWA(){document.getElementById('wap').classList.toggle('open');}
+function openWA(msg){window.open(`https://wa.me/523228894250?text=${msg}`,'_blank');}
+document.addEventListener('click',e=>{if(!document.getElementById('waf').contains(e.target))document.getElementById('wap').classList.remove('open');});
+
+// ── TOAST ──
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2700);}
+
+// ── SCROLL FADE ──
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');}),{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+// ── INIT ──
+initData();
+renderPrices();
+renderGallery();
+renderReviews();
+renderHours();
+</script>
+</body>
+</html>
