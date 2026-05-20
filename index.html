@@ -543,7 +543,7 @@ footer p{color:var(--muted);font-size:.76rem;}
 <script>
 // ══ SUPABASE CONFIG ══
 const SB_URL='https://vronhuwjuyitlxcabkme.supabase.co';
-const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZyb25odXdqdXlpdGx4Y2Fia21lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY0NzQ4MDAsImV4cCI6MjAyMjA1MDgwMH0.placeholder';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZyb25odXdqdXlpdGx4Y2Fia21lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxNDY0MzgsImV4cCI6MjA4ODcyMjQzOH0._Tp_y1JMZoNbNXbftMo1PCVm6h95VrlgcVF-vKIegbY';
 
 // ══ LOCAL STORAGE FALLBACK ══
 const S={
@@ -681,6 +681,7 @@ async function submitReview(){
   const name=document.getElementById('rev-name').value.trim();
   const text=document.getElementById('rev-text').value.trim();
   if(!name||!text){showToast('✏️ Escribe tu nombre y reseña');return;}
+  await saveReviewToSB({stars:revStars,text,author:name,approved:false});
   const r=S.get('reviews',DR);
   r.push({stars:revStars,text,author:name,approved:false});
   S.set('reviews',r);
@@ -742,7 +743,7 @@ function handlePhotos(files){
     if(!f.type.startsWith('image/')) return;
     const img=new Image();
     const url=URL.createObjectURL(f);
-    img.onload=()=>{
+    img.onload=async ()=>{
       const canvas=document.createElement('canvas');
       let w=img.width,h=img.height,max=1200;
       if(w>max||h>max){if(w>h){h=Math.round(h*max/w);w=max;}else{w=Math.round(w*max/h);h=max;}}
@@ -750,10 +751,20 @@ function handlePhotos(files){
       canvas.getContext('2d').drawImage(img,0,0,w,h);
       const compressed=canvas.toDataURL('image/jpeg',.82);
       URL.revokeObjectURL(url);
-      photos.push(compressed);done++;
-      S.set('photos',photos);
-      renderAPh();renderGallery();
-      if(done===total)showToast('✅ '+done+' foto(s) subida(s)');
+      // Guardar en Supabase
+      const ok=await savePhotoToSB(compressed);
+      if(ok){
+        photos.push({url:compressed});done++;
+        S.set('photos',photos);
+        renderAPh();renderGallery();
+        if(done===total)showToast('✅ '+done+' foto(s) guardada(s) en la nube ☁️');
+      } else {
+        // Fallback a localStorage
+        photos.push(compressed);done++;
+        S.set('photos',photos);
+        renderAPh();renderGallery();
+        if(done===total)showToast('✅ '+done+' foto(s) subida(s)');
+      }
     };
     img.src=url;
   });
@@ -769,7 +780,7 @@ function renderAPh(){
 }
 
 // ══ PRICE MANAGER ══
-function addPrice(){
+async function addPrice(){
   const ico=document.getElementById('np-ico').value.trim()||'🔑';
   const name=document.getElementById('np-name').value.trim();
   const desc=document.getElementById('np-desc').value.trim();
@@ -777,11 +788,13 @@ function addPrice(){
   const note=document.getElementById('np-note').value.trim();
   const featured=document.getElementById('np-feat').checked;
   if(!name||!price){showToast('✏️ Nombre y precio son obligatorios');return;}
-  const p=S.get('prices',DP);p.push({ico,name,desc,price,note,featured});
+  const item={ico,name,desc,price,note,featured};
+  const ok=await savePriceToSB(item);
+  const p=S.get('prices',DP);p.push(item);
   S.set('prices',p);renderAPrices();renderPrices();
   ['np-ico','np-name','np-desc','np-price','np-note'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('np-feat').checked=false;
-  showToast('✅ Servicio agregado');
+  showToast(ok?'✅ Guardado en la nube ☁️':'✅ Servicio agregado');
 }
 function delPrice(i){const p=S.get('prices',DP);p.splice(i,1);S.set('prices',p);renderAPrices();renderPrices();showToast('🗑️ Eliminado');}
 function renderAPrices(){
@@ -851,8 +864,53 @@ document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
 // ══ SERVICE WORKER ══
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 
+// ══ SUPABASE LOAD — carga datos reales de la nube ══
+async function loadFromSupabase(){
+  // PRECIOS
+  const pr=await sbGet('juanito_precios');
+  if(pr&&pr.length>0){
+    const mapped=pr.map(r=>({id:r.id,ico:r.ico||'🔑',name:r.name||'',desc:r.descr||'',price:r.price||'',note:r.note||'',featured:r.featured||false}));
+    S.set('prices',mapped);
+  }
+  renderPrices();
+
+  // FOTOS
+  const fo=await sbGet('juanito_fotos');
+  if(fo&&fo.length>0){
+    S.set('photos',fo.map(r=>({url:r.url,id:r.id})));
+  }
+  renderGallery();
+
+  // RESEÑAS
+  const re=await sbGet('juanito_resenas');
+  if(re&&re.length>0){
+    S.set('reviews',re.map(r=>({id:r.id,stars:r.stars,text:r.body||'',author:r.author||'',approved:r.approved||false})));
+  }
+  renderReviews();
+}
+
+// GUARDAR FOTO EN SUPABASE
+async function savePhotoToSB(dataUrl){
+  // Guardamos la imagen como URL en base64 directamente en la tabla
+  const ok=await sbInsert('juanito_fotos',{url:dataUrl});
+  return ok;
+}
+
+// GUARDAR PRECIO EN SUPABASE
+async function savePriceToSB(item){
+  const ok=await sbInsert('juanito_precios',{ico:item.ico,name:item.name,descr:item.desc,price:item.price,note:item.note,featured:item.featured});
+  return ok;
+}
+
+// GUARDAR RESEÑA EN SUPABASE
+async function saveReviewToSB(item){
+  const ok=await sbInsert('juanito_resenas',{stars:item.stars,body:item.text,author:item.author,approved:false});
+  return ok;
+}
+
 // ══ INIT ══
-initData();renderPrices();renderGallery();renderReviews();renderHours();
+initData();renderHours();
+loadFromSupabase();
 </script>
 </body>
 </html>
